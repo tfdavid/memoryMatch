@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Match!</title>
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Schoolbell" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script href="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script href="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+        <script src="main.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    </head>
+
+
+    <body>
+    <div class="PageContainer">
+        <header class="headerContainer">
+            <div class="headerTitle"></div>
+            <div class="headerText">Match</div>
+            <aside class="headerLinks">
+            </aside>
+        </header>
+        <main class="mainContainer">
+            <aside class="statsContainerLarge">
+                <aside class="statsContainer">
+                    <div class="statsTitle">Stats:</div>
+                    <div class="GamesPlayed">
+                        <div class="label">Games Played</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="attempts">
+                        <div class="label">Attempts</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="accuracy">
+                        <div class="label">Accuracy</div>
+                        <div class="value"></div>
+                    </div>
+                    <button class="reset">Reset Game</button>
+
+                </aside>
+            </aside>
+            <main class="gameContainer">
+                <div id="game-area">
+                    <div class="card">
+                        <img class="front" src="images/RedPikCard.jpg"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front" src="images/RedPikCard.jpg"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front" src="images/BluePikCard.jpg"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+                    <div class="card">
+                        <img class="front"></img>
+                        <img class="back" src="images/PikminCardBack.png"></img>
+                    </div>
+
+
+                </div>
+
+
+            <script>
+                var $container	= $('#game-area'),
+                    $cards	= $container.children('.card'),
+                    timeout;
+
+                $cards.on( 'mouseenter', function( event ) {
+
+                    var $card	= $(this);
+                    clearTimeout( timeout );
+                    timeout = setTimeout( function() {
+
+                        if( $card.hasClass('active') ) return false;
+
+                        $cards.not($card).removeClass('active').addClass('blur');
+
+                        $card.removeClass('blur').addClass('active');
+
+                    }, 0 );
+
+                });
+
+                $cards.on( 'mouseleave', function( event ) {
+
+                    clearTimeout( timeout );
+                    $cards.removeClass('active blur');
+
+                });
+            </script>
+
+            </main>
+        </main>
+    </div>
+
+
+
+
+    </body>
+
+</html>
