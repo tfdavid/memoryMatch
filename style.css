@@ -160,7 +160,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    perspective: 30em;
+    perspective: 800px;
 
 }
 .card {
@@ -169,16 +169,16 @@ body{
     width: 15%;
     height: 30%;
     position: relative;
-    background-color: greenyellow;
+    /*background-color: greenyellow;*/
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: .1em .3em .5em 0 rgba(0, 0, 0, .2);
     transition: all .3s ;
-
-
+    transform-style: preserve-3d;
 
 }
+
 .card .front {
     border: 1px outset hotpink;
     border-radius: 20%;
@@ -188,42 +188,55 @@ body{
     background-color:  #0fb8ad;
     box-shadow: .1em .3em .5em 0 rgba(0, 0, 0, .5);
     transition: transform .3s ease-in-out;
-    transform-style: preserve-3d;
+
+
 }
-.card .back{
+.card .back {
     border-radius: 20%;
     width: 95%;
     height: 95%;
     position: absolute;
-
-
-}
-/*
-.card:hover{
-    box-shadow: .2em .5em .8em 0 rgba(0,0,0,0.3);
-    transform: scale(1.1, 1.1);
-    transition: transform .3s ease-in-out;
+    backface-visibility: hidden;
 }
 
-#game-area:hover .card:not(:hover) {
 
-    filter: blur(.3em);
-    transition: filter .2s ease-in-out;
-}
-*/
-#game-area .card.blur{
+
+
+
+
+
+
+.card.blur:not(.flipped){
     filter: blur(.1em);
     transform: scale(.95);
     transition: transform .6s;
 }
-#game-area .card.active{
+.card.active{
     box-shadow: .2em .5em .8em 0 rgba(0,0,0,0.3);
     transform: scale(1.1);
     transition: transform .3s;
 
 }
 
+.card.flipped{
+    transform: rotateY( -180deg );
+    transition: transform 1s;
+}
+/*to fix flip while mouseenter(transform properties were overriding*/
+/*#game-area .card.flipped.active{*/
+    /*transform: rotateY(-180deg) scale(1.1);*/
 
+/*}*/
+
+
+
+
+
+
+/*#game-area .card.flipped.blur{*/
+    /*transform: rotateY(-180deg) scale(.95);*/
+
+/*}*/
 
 
 
