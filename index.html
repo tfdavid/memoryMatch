@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="style.css">
         <script href="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script href="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-        <script src="main.js"></script>
+
 
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="main.js"></script>
 
     </head>
 
@@ -56,7 +57,7 @@
                         <img class="back" src="images/PikminCardBack.png"></img>
                     </div>
                     <div class="card">
-                        <img class="front"></img>
+                        <img class="front" src="images/BluePikCard.jpg"></img>
                         <img class="back" src="images/PikminCardBack.png"></img>
                     </div>
                     <div class="card">
@@ -121,32 +122,52 @@
 
 
             <script>
-                var $container	= $('#game-area'),
-                    $cards	= $container.children('.card'),
-                    timeout;
+//                var $container	= $('#game-area'),
+//                    $cards	= $container.children('.card'),
+//                    timeout;
+//
+//                $cards.on( 'mouseenter', function( event ) {
+//
+//                    var $card	= $(this);
+//                    clearTimeout( timeout );
+//                    timeout = setTimeout( function() {
+//
+//                        if( $card.hasClass('active') ) return false;
+//
+//                        $cards.not($card).removeClass('active').addClass('blur');
+//
+//                        $card.removeClass('blur').addClass('active');
+//
+//                    }, 0 );
+//
+//                });
+//
+//                $cards.on( 'mouseleave', function( event ) {
+//
+//                    clearTimeout( timeout );
+//                    $cards.removeClass('active blur');
+//
+//                });
 
-                $cards.on( 'mouseenter', function( event ) {
 
-                    var $card	= $(this);
-                    clearTimeout( timeout );
-                    timeout = setTimeout( function() {
+//                    var container	= $('#game-area'),
+//                        cards= container.children('.card');
+//
+//
+//                    cards.on( 'mouseenter', function() {
+//
+//                        var card= $(this);
+//
+//                        cards.not(card).removeClass('active').addClass('blur');
+//
+//                        card.removeClass('blur').addClass('active');
+//                    });
+//                    cards.on( 'mouseleave', function() {
+//
+//                        cards.removeClass('active blur');
+//                    });
 
-                        if( $card.hasClass('active') ) return false;
 
-                        $cards.not($card).removeClass('active').addClass('blur');
-
-                        $card.removeClass('blur').addClass('active');
-
-                    }, 0 );
-
-                });
-
-                $cards.on( 'mouseleave', function( event ) {
-
-                    clearTimeout( timeout );
-                    $cards.removeClass('active blur');
-
-                });
             </script>
 
             </main>
