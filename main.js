@@ -6,6 +6,7 @@ function initializeApp(){
 
     $("#game-area").on("click", ".card", flipCard);
     $("#game-area").on("click", ".card", card_clicked);
+    $(".reset").on("click", reset);
 
 
 
@@ -65,6 +66,7 @@ var second_card_src;
 var total_possible_matches = 9;
 var match_counter = 0;
 
+var matchesMade=0;
 var attempts=0;
 var accuracy=0;
 var games_played=0;
@@ -74,10 +76,16 @@ var randomArray = randomizeCards(images);
 
 //display stats
 function display_stats(){
-    $(".games-played.value").text(games_played);
-    $(".attempts.value").text(attempts);
-    accuracy = ((match_counter/attempts)*100).toFixed(0);
-    $(".accuracy.value").text(accuracy + "%");
+    $(".GamesPlayed .value").text(games_played);
+    $(".attempts .value").text(attempts);
+    if(attempts===0){
+        $(".accuracy .value").text("0%");
+    }
+    else {
+        accuracy = ((matchesMade / attempts) * 100).toFixed(0);
+        $(".accuracy .value").text(accuracy + "%");
+    }
+
 
 }
 
@@ -85,7 +93,6 @@ function display_stats(){
 function reset_stats(){
     attempts = 0;
     accuracy = 0;
-    games_played = 0;
     display_stats();
 }
 
@@ -112,10 +119,14 @@ function card_clicked(){
         $(second_card_clicked).addClass("noClick");
 
         $("#game-area").off("click");
-
+        attempts++;
+        display_stats();
 
         if(first_card_src===second_card_src){
+
             match_counter++;
+            matchesMade++;
+            display_stats();
 
 
 
@@ -125,10 +136,12 @@ function card_clicked(){
             $("#game-area").on("click", ".card", flipCard);
             $("#game-area").on("click", ".card", card_clicked);
             if(match_counter===total_possible_matches){
+                match_counter=0;
                 setTimeout(user_has_won, 1500);
                 setTimeout(function(){
                     $(".card").removeClass("flipped");
                 }, 1200);
+
             }
             else{
                 return;
@@ -144,6 +157,32 @@ function card_clicked(){
 
     }
 }
+
+//reset button
+function reset(){
+    games_played++;
+    reset_stats();
+    display_stats();
+    setTimeout(function(){
+        $(".card").removeClass("flipped");
+    }, 200);
+    setTimeout((function(){
+        $(".card").remove();
+        randomArray = randomizeCards(images);
+        createCards(randomArray);
+        blur();
+    }), 500)
+    first_card_clicked=null;
+    second_card_clicked=null;
+
+
+
+
+
+}
+
+
+
 //When the user wins
 function user_has_won(){
     games_played++;
