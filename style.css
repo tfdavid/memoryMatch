@@ -115,6 +115,8 @@ body{
     animation-iteration-count: infinite;
     animation-name: Textpulse;
     transition: transform 2s ease-in-out;
+    display: flex;
+    justify-content: space-around;
 
 
 }
@@ -127,6 +129,8 @@ body{
     animation-name: Textpulse;
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: space-around;
 }
 .accuracy{
     #border: 1px solid black;
@@ -137,6 +141,20 @@ body{
     animation-name: Textpulse;
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: space-around;
+}
+.label{
+    display: inline-block;
+    width: 50%;
+
+
+}
+.value{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    font-size: 1.2em;
 }
 .reset{
     border: 1px solid black;
@@ -222,22 +240,5 @@ body{
     transform: rotateY( -180deg );
     transition: transform 1s;
 }
-/*to fix flip while mouseenter(transform properties were overriding*/
-/*#game-area .card.flipped.active{*/
-    /*transform: rotateY(-180deg) scale(1.1);*/
-
-/*}*/
-
-
-
-
-
-
-/*#game-area .card.flipped.blur{*/
-    /*transform: rotateY(-180deg) scale(.95);*/
-
-/*}*/
-
-
 
 
