@@ -7,6 +7,7 @@ function initializeApp(){
     $("#game-area").on("click", ".card", flipCard);
     $("#game-area").on("click", ".card", card_clicked);
     $(".reset").on("click", reset);
+    $(".titleTitle").on("click", titleClick);
 
 
 
@@ -212,7 +213,7 @@ function mismatch(){
 ///flip the card
 
 function flipCard(){
-
+    popAudio.play();
     $(this).not($(".noClick")).toggleClass("flipped");
 }
 
@@ -229,6 +230,26 @@ function blur() {
         cards.removeClass('active blur');
     });
 }
+
+//title page click handler
+
+
+function titleClick(){
+    $(".titlePage").addClass("FadeOut");
+    $(".PageContainer").addClass("FadeIn");
+    titleAudio.pause();
+    mainAudio.play();
+    mainAudio.loop = true;
+}
+
+//audio controls
+var popAudio = new Audio("Sounds/Pop.wav");
+// popAudio.volume=1;
+var titleAudio = new Audio("Sounds/TitleScreen.mp3");
+titleAudio.volume=.8;
+var mainAudio = new Audio("Sounds/MainScreen.mp3");
+mainAudio.volume=.6;
+titleAudio.play();
 
 
 

@@ -1,10 +1,106 @@
+*{
+    box-sizing: border-box;
+}
+
+
 body{
     box-sizing: border-box;
     margin: 0;
     height: 100vh;
-    width: 100vw;
+
 
 }
+@keyframes fadeOut {
+    from { opacity: .9; visibility: visible }
+    to { opacity: 0; visibility: hidden}
+
+}
+.overlay{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background: black;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+
+}
+/*@keyframes fadeIn {*/
+    /*from { opacity: 0; }*/
+    /*to { opacity: 1; }*/
+/*}*/
+
+.titlePage{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    background-image: url("images/PikminBackground.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.titleTitle:hover{
+    transform: scale(1.3);
+    filter: drop-shadow(.1em .1em .1em black);
+    color: white;
+}
+@keyframes TitleTextPulse {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.2)}
+    100% {transform: scale(1)}
+}
+@keyframes FadeRight {
+    from {opacity: 0; transform: translate(-20%) }
+    to {opacity: 1; transform: translate(0%) }
+}
+.titleTextWrapper{
+    #border: 1px solid black;
+    height: 7%;
+    width: 20%;
+    top: 20%;
+    position: absolute;
+    right: 39%;
+    animation-name: FadeRight;
+    animation-duration: 1s;
+    display: flex;
+    justify-content: center;
+
+}
+.titleTitle{
+    font-family: "Architects Daughter";
+    font-size: 5.6vmin;
+    animation-duration: 2.3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: TitleTextPulse;
+    cursor: pointer;
+    position: absolute;
+
+}
+.titlePage.FadeOut{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    background-image: url("images/PikminBackground.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(.8); visibility: hidden }
+    to { opacity: .9; transform: scale(1); visibility: visible}
+
+}
+
 .PageContainer{
     height: 100%;
     width: 100%;
@@ -13,13 +109,24 @@ body{
     background-image: url("images/DewWallpaper.jpg");
     background-size: cover;
 }
+.PageContainer.FadeIn{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/DewWallpaper.jpg");
+    background-size: cover;
+    animation-name: fadeIn;
+    animation-duration: 1.3s;
+    animation-fill-mode: both;
+}
+
 
 
 .headerContainer{
     border: 1px solid black;
     margin: 0;
-    width: 100vw;
-    height: 20vh;
+    height: 20%;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
