@@ -322,6 +322,7 @@ body{
     height: 95%;
     position: absolute;
     backface-visibility: hidden;
+    opacity: 0;
 }
 
 

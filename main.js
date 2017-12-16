@@ -94,6 +94,7 @@ function display_stats(){
 function reset_stats(){
     attempts = 0;
     accuracy = 0;
+    matchesMade=0;
     display_stats();
 }
 
@@ -124,6 +125,7 @@ function card_clicked(){
         display_stats();
 
         if(first_card_src===second_card_src){
+            matchAudio(second_card_src);
 
             match_counter++;
             matchesMade++;
@@ -138,6 +140,7 @@ function card_clicked(){
             $("#game-area").on("click", ".card", card_clicked);
             if(match_counter===total_possible_matches){
                 match_counter=0;
+                GameWinWhistle.play();
                 setTimeout(user_has_won, 1500);
                 setTimeout(function(){
                     $(".card").removeClass("flipped");
@@ -161,6 +164,7 @@ function card_clicked(){
 
 //reset button
 function reset(){
+    match_counter=0;
     games_played++;
     reset_stats();
     display_stats();
@@ -238,19 +242,55 @@ function titleClick(){
     $(".titlePage").addClass("FadeOut");
     $(".PageContainer").addClass("FadeIn");
     titleAudio.pause();
-    mainAudio.play();
+    // mainAudio.play();
     mainAudio.loop = true;
 }
 
 //audio controls
 var popAudio = new Audio("Sounds/Pop.wav");
-// popAudio.volume=1;
-var titleAudio = new Audio("Sounds/TitleScreen.mp3");
-titleAudio.volume=.8;
 var mainAudio = new Audio("Sounds/MainScreen.mp3");
-mainAudio.volume=.6;
+mainAudio.volume=.5;
+
+var LouieMatch = new Audio("Sounds/LouieMatch.ogg");
+var OlimarMatch = new Audio("Sounds/OlimarMatch.ogg");
+var GameWinWhistle = new Audio("Sounds/GameWinWhistle.ogg");
+var BlowerMatch = new Audio("Sounds/BlowerMatch.mp3");
+BlowerMatch.volume = .9;
+var BulborbMatch = new Audio("Sounds/BulborbMatch.mp3");
+BulborbMatch.volume = .9;
+var PikminCardMatch = new Audio("Sounds/PikminCardMatch.mp3");
+PikminCardMatch.volume = .4;
+
+var titleAudio = new Audio("Sounds/TitleScreen.mp3");
 titleAudio.play();
+titleAudio.volume=.7;
 
 
+
+//play audio on match
+
+function matchAudio(src){
+
+    switch(src) {
+        case "images/LouieCard.jpg":
+            console.log("louie");
+            LouieMatch.load();   //had to reload this each time or failure
+            LouieMatch.play();
+
+            break;
+        case "images/Olimar.jpg":
+            OlimarMatch.play();
+            break;
+        case "images/Bulborb.jpg":
+            BulborbMatch.play();
+            break;
+        case "images/Blower.jpg":
+            BlowerMatch.play();
+            break;
+        default:
+            PikminCardMatch.load();
+            PikminCardMatch.play();
+    }
+};
 
 
