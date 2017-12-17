@@ -202,7 +202,7 @@ body{
     background-image: url("images/LeavesWallpaper.jpg");
     background-size: cover;
     animation-name: fadeIn;
-    animation-duration: 1.3s;
+    animation-duration: .6s;
     animation-fill-mode: both;
 }
 
@@ -543,7 +543,7 @@ body{
 
 }
 #game-area{
-    #border: 1px solid orange;
+    border: 1px solid orange;
     height: 90%;
     width: 80%;
     display: flex;
@@ -598,21 +598,15 @@ body{
 
 }
 
-
-
-
-
-
-
-
 .card.blur:not(.flipped){
-    filter: blur(.1em);
+
     transform: scale(.95);
-    transition: transform .6s;
+    transition: transform .4s;
+    filter: blur(.1em);
 }
 .card.active{
     box-shadow: .2em .5em .8em 0 rgba(0,0,0,0.3);
-    transform: scale(1.1);
+    transform: scale(1.1) translate(0%, -2%);
     transition: transform .2s;
 
 }
