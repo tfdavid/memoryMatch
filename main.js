@@ -8,6 +8,55 @@ function initializeApp(){
     $("#game-area").on("click", ".card", card_clicked);
     $(".reset").on("click", reset);
     $(".titleTitle").on("click", titleClick);
+    $(".AboutMeRef").on("click", function(){
+        popAudio.play();
+        $(".statsContainerLarge").toggleClass("flipped");
+
+    });
+    $(".SoundToggle").on("click", function() {
+        if(mainAudio.volume===0) {
+
+
+            popAudio.volume = 1;
+            mainAudio.volume=.7;
+            GameWin.volume = 1;
+            LouieMatch.volume = 1;
+            OlimarMatch.volume = 1;
+            GameWinWhistle.volume = 1;
+            BlowerMatch.volume = .9;
+            BulborbMatch.volume = .9;
+            PikminCardMatch.volume = .4;
+            titleAudio.volume=.8;
+
+    }
+    else{
+
+        popAudio.volume = 0;
+        mainAudio.volume=0;
+        GameWin.volume = 0;
+        LouieMatch.volume = 0;
+        OlimarMatch.volume = 0;
+        GameWinWhistle.volume = 0;
+        BlowerMatch.volume = 0;
+        BulborbMatch.volume = 0;
+        PikminCardMatch.volume = 0;
+        titleAudio.volume=0;
+
+
+        }
+
+
+    } );
+    $(".WinPageMessage").on("click", function(){
+        $(".overlay2").hide();
+        $(".WinPage").addClass("fadeOut");
+        $(".WinPage").removeClass("fadeIn");
+        GameWin.pause();
+        GameWin.currentTime = 0
+        mainAudio.play();
+
+
+    });
 
 
 
@@ -139,12 +188,16 @@ function card_clicked(){
             $("#game-area").on("click", ".card", flipCard);
             $("#game-area").on("click", ".card", card_clicked);
             if(match_counter===total_possible_matches){
+                if(accuracy>50){
+                    $(".overlay2").show();
+                }
                 match_counter=0;
                 GameWinWhistle.play();
                 setTimeout(user_has_won, 1500);
                 setTimeout(function(){
                     $(".card").removeClass("flipped");
                 }, 1200);
+
 
             }
             else{
@@ -189,12 +242,23 @@ function reset(){
 
 //When the user wins
 function user_has_won(){
+    if(accuracy>50){
+        mainAudio.pause();
+        mainAudio.currentTime = 0;
+        GameWin.play();
+        $(".WinPage").removeClass("fadeOut");
+        $(".WinPage").addClass("fadeIn");
+
+
+
+    }
     games_played++;
     display_stats();
     $(".card").remove();
     randomArray = randomizeCards(images);
     createCards(randomArray);
     blur();
+
 
 }
 
@@ -241,15 +305,15 @@ function titleClick(){
     $(".titlePage").addClass("FadeOut");
     $(".PageContainer").addClass("FadeIn");
     titleAudio.pause();
-    // mainAudio.play();                        //MUTED TEMP
+    mainAudio.play();                        //MUTED TEMP
     mainAudio.loop = true;
 }
 
 //audio controls
 var popAudio = new Audio("Sounds/Pop.wav");
 var mainAudio = new Audio("Sounds/MainScreen.mp3");
-mainAudio.volume=.5;
-
+mainAudio.volume=.7;
+var GameWin = new Audio("Sounds/GameWin.mp3");
 var LouieMatch = new Audio("Sounds/LouieMatch.ogg");
 var OlimarMatch = new Audio("Sounds/OlimarMatch.ogg");
 var GameWinWhistle = new Audio("Sounds/GameWinWhistle.ogg");
@@ -261,8 +325,8 @@ var PikminCardMatch = new Audio("Sounds/PikminCardMatch.mp3");
 PikminCardMatch.volume = .4;
 
 var titleAudio = new Audio("Sounds/TitleScreen.mp3");
-// titleAudio.play();               //MUTED TEMP
-titleAudio.volume=.7;
+titleAudio.play();               //MUTED TEMP
+titleAudio.volume=.8;
 
 
 
@@ -272,7 +336,6 @@ function matchAudio(src){
 
     switch(src) {
         case "images/LouieCard.jpg":
-            console.log("louie");
             LouieMatch.load();   //had to reload this each time or failure
             LouieMatch.play();
 
@@ -291,5 +354,6 @@ function matchAudio(src){
             PikminCardMatch.play();
     }
 };
+
 
 
