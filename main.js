@@ -164,6 +164,7 @@ function card_clicked(){
 
 //reset button
 function reset(){
+    popAudio.play();
     match_counter=0;
     games_played++;
     reset_stats();
@@ -179,8 +180,6 @@ function reset(){
     }), 500)
     first_card_clicked=null;
     second_card_clicked=null;
-
-
 
 
 
@@ -242,7 +241,7 @@ function titleClick(){
     $(".titlePage").addClass("FadeOut");
     $(".PageContainer").addClass("FadeIn");
     titleAudio.pause();
-    // mainAudio.play();
+    // mainAudio.play();                        //MUTED TEMP
     mainAudio.loop = true;
 }
 
@@ -262,7 +261,7 @@ var PikminCardMatch = new Audio("Sounds/PikminCardMatch.mp3");
 PikminCardMatch.volume = .4;
 
 var titleAudio = new Audio("Sounds/TitleScreen.mp3");
-titleAudio.play();
+// titleAudio.play();               //MUTED TEMP
 titleAudio.volume=.7;
 
 

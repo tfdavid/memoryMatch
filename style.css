@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+
 }
 
 
@@ -26,10 +27,7 @@ body{
     z-index: 2;
 
 }
-/*@keyframes fadeIn {*/
-    /*from { opacity: 0; }*/
-    /*to { opacity: 1; }*/
-/*}*/
+
 
 .titlePage{
     height: 100%;
@@ -41,6 +39,8 @@ body{
     background-size: cover;
     display: flex;
     justify-content: center;
+    opacity: 0;
+    /*CHANGE OPACITY LATER*/
 }
 .titleTitle:hover{
     transform: scale(1.3);
@@ -106,7 +106,7 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("images/DewWallpaper.jpg");
+    background-image: url("images/LeavesWallpaper.jpg");
     background-size: cover;
 }
 .PageContainer.FadeIn{
@@ -114,7 +114,7 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("images/DewWallpaper.jpg");
+    background-image: url("images/LeavesWallpaper.jpg");
     background-size: cover;
     animation-name: fadeIn;
     animation-duration: 1.3s;
@@ -124,13 +124,14 @@ body{
 
 
 .headerContainer{
-    border: 1px solid black;
+    #border: 1px solid black;
     margin: 0;
     height: 20%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     position: relative;
+    padding-left: 2%;
 
 
 }
@@ -140,9 +141,10 @@ body{
     height: 95%;
     width: 40%;
     background-image: url("images/PikminLogo.png");
-    background-size: contain;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+
 }
 @keyframes pulse {
     0% {transform: scale(1) rotate(-30deg);}
@@ -153,46 +155,100 @@ body{
 .headerText{
     font-family: "Schoolbell";
 
-    font-size: 2.3em;
+    font-size: 6vmin;
     animation-duration: 4s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-name: pulse;
     position: absolute;
-    bottom:0;
+    bottom:-5%;
+    left: 37%;
 
 
 
 }
 
 .headerLinks{
-    border: 1px solid black;
+    #border: 1px solid black;
     width: 20%;
     height: 95%;
 
 }
 .mainContainer{
-    border: 1px solid green;
+    border: 3px solid green;
     display: flex;
+    justify-content: space-around;
     height: 80%;
 
 
+}
+
+@-webkit-keyframes slides {
+    from {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 55% 30%;
+
+    }
+    20% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 35% 90%;
+    }
+    40% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 47% -90%;
+
+    }
+    60% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 20% 90%;
+    }
+    80% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 65% 90%;
+    }
+    to {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 55% 30%;
+    }
 }
 .statsContainerLarge{
     border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 24%;
+    background-image: url("images/WoodWallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 14.7% 100%;
+    box-shadow: .4em .1em .5em .1em gray;
+    border-radius: 10%;
+    /*animation-name: slides;*/
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+
+
+
+
+
 }
 .statsContainer{
-    border: 1px solid black;
+    #border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    height: 80%;
+    justify-content: space-around;
+    width: 98%;
+    height: 98%;
     font-family: "Schoolbell";
+    color: white;
+    font-weight: 900;
+
 
 }
 @keyframes Textpulse {
@@ -209,9 +265,11 @@ body{
     }
 }
 .statsTitle{
-    border: 1px solid black;
+    #border: 1px solid black;
     height: 10%;
     font-size: 1.4em;
+    filter: drop-shadow(.01em .1em .01em black);
+    padding-left: 4%;
 
 }
 .GamesPlayed{
@@ -220,7 +278,7 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
     display: flex;
     justify-content: space-around;
@@ -233,7 +291,7 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
     display: flex;
@@ -245,7 +303,7 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
     display: flex;
@@ -254,6 +312,10 @@ body{
 .label{
     display: inline-block;
     width: 50%;
+    text-shadow: .1em -.01em .2em black;
+    font-size: 1em;
+    color: white;
+    border-radius: 20%;
 
 
 }
@@ -261,25 +323,37 @@ body{
     display: inline-block;
     width: 30%;
     height: 100%;
-    font-size: 1.2em;
+    filter: drop-shadow(.01em .1em .01em black);
+    font-weight: 900;
+    font-size: 1.4em;
 }
 .reset{
-    border: 1px solid black;
+    border: .3px solid black;
     height: 10%;
+    color: white;
+    background-color: rgba(0,0,0,0);
+    text-shadow: .1em .1em .5em black;
+    font-family: Schoolbell;
+    font-size: 3vmin;
 }
-
+.reset:hover{
+    transform: scale(1.1);
+}
+.reset:focus{
+    outline:none;
+}
 .gameContainer{
-    border: 1px solid salmon;
+    border: 3px solid salmon;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 80%;
+    width: 70%;
 
 }
 #game-area{
     border: 1px solid orange;
     height: 90%;
-    width: 66%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -289,7 +363,7 @@ body{
 
 }
 .card {
-    border: 1px outset hotpink;
+    border: 2px outset #23b419;
     border-radius: 20%;
     width: 15%;
     height: 30%;
@@ -305,7 +379,7 @@ body{
 }
 
 .card .front {
-    border: 1px outset hotpink;
+    #border: 1px outset hotpink;
     border-radius: 20%;
     width: 95%;
     height: 95%;
@@ -313,7 +387,8 @@ body{
     background-color:  #0fb8ad;
     box-shadow: .1em .3em .5em 0 rgba(0, 0, 0, .5);
     transition: transform .3s ease-in-out;
-
+    -webkit-user-drag: none;
+    user-select: none;
 
 }
 .card .back {
@@ -322,7 +397,9 @@ body{
     height: 95%;
     position: absolute;
     backface-visibility: hidden;
-    opacity: 0;
+    -webkit-user-drag: none;
+    user-select: none;
+
 }
 
 
