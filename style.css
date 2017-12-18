@@ -543,7 +543,7 @@ body{
 
 }
 #game-area{
-    border: 1px solid orange;
+    #border: 1px solid orange;
     height: 90%;
     width: 80%;
     display: flex;
@@ -562,7 +562,6 @@ body{
     width: 15%;
     height: 30%;
     position: relative;
-    /*background-color: greenyellow;*/
     display: flex;
     justify-content: center;
     align-items: center;

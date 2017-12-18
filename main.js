@@ -305,7 +305,7 @@ function titleClick(){
     $(".titlePage").addClass("FadeOut");
     $(".PageContainer").addClass("FadeIn");
     titleAudio.pause();
-    mainAudio.play();                        //MUTED TEMP
+    mainAudio.play();
     mainAudio.loop = true;
 }
 
