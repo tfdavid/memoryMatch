@@ -1,41 +1,235 @@
+*{
+    box-sizing: border-box;
+
+}
+
 body{
     box-sizing: border-box;
     margin: 0;
     height: 100vh;
-    width: 100vw;
+
 
 }
+@keyframes fadeOut {
+    from { opacity: .9; visibility: visible }
+    to { opacity: 0; visibility: hidden}
+
+}
+.overlay{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background: black;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 5;
+}
+.overlay2{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background: black;
+    animation-name: fadeIn2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    display: none;
+}
+.WinPage{
+    background-image: url("images/PikminWin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 35%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 6;
+    transition: 1s;
+    visibility: hidden;
+}
+@keyframes fadeIn2 {
+    from { opacity: 0; visibility: hidden }
+    to { opacity: 1; visibility: visible}
+}
+.WinPage.fadeIn{
+    background-image: url("images/PikminWin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 35%;
+    display: flex;
+    animation: fadeIn2;
+    animation-duration: 1.4s;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 6;
+    visibility: visible;
+}
+.WinPage.fadeOut{
+    background-image: url("images/PikminWin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 35%;
+    display: flex;
+    animation: fadeOut;
+    animation-duration: 1.4s;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 6;
+    visibility: hidden;
+}
+
+
+.WinTextWrapper{
+    #border: 1px solid black;
+    height: 7%;
+    width: 30%;
+    bottom: 15%;
+    position: absolute;
+    left: 7%;
+    animation-name: FadeRight;
+    animation-duration: 2s;
+    display: flex;
+    justify-content: center;
+}
+.WinPageMessage{
+    font-family: "Architects Daughter";
+    font-size: 5vmin;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: TitleTextPulse;
+    cursor: pointer;
+    position: absolute;
+    user-select: none;
+}
+.WinPageMessage:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(.1em .1em .1em black);
+    color: white;
+}
+.titlePage{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    background: white;
+    background-image: url("images/PikminBackground.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.titleTitle:hover{
+    transform: scale(1.3);
+    filter: drop-shadow(.1em .1em .1em black);
+    color: white;
+}
+@keyframes TitleTextPulse {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.2)}
+    100% {transform: scale(1)}
+}
+@keyframes FadeRight {
+    from {opacity: 0; transform: translate(-20%) }
+    to {opacity: 1; transform: translate(0%) }
+}
+.titleTextWrapper{
+    #border: 1px solid black;
+    height: 7%;
+    width: 20%;
+    top: 20%;
+    position: absolute;
+    right: 39%;
+    animation-name: FadeRight;
+    animation-duration: 1s;
+    display: flex;
+    justify-content: center;
+
+}
+.titleTitle{
+    font-family: "Architects Daughter";
+    font-size: 5.6vmin;
+    animation-duration: 2.3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: TitleTextPulse;
+    cursor: pointer;
+    position: absolute;
+    user-select: none;
+
+
+}
+.titlePage.FadeOut{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    background-image: url("images/PikminBackground.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(.8); visibility: hidden }
+    to { opacity: .9; transform: scale(1); visibility: visible}
+
+}
+
 .PageContainer{
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("images/DewWallpaper.jpg");
+    background-image: url("images/LeavesWallpaper.jpg");
     background-size: cover;
+}
+.PageContainer.FadeIn{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/LeavesWallpaper.jpg");
+    background-size: cover;
+    animation-name: fadeIn;
+    animation-duration: .6s;
+    animation-fill-mode: both;
 }
 
 
+
 .headerContainer{
-    border: 1px solid black;
+    #border: 1px solid black;
     margin: 0;
-    width: 100vw;
-    height: 20vh;
+    height: 20%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     position: relative;
+    padding-left: 2%;
 
 
 }
 
 .headerTitle{
-    border: 1px solid black;
+    #border: 1px solid black;
     height: 95%;
     width: 40%;
     background-image: url("images/PikminLogo.png");
-    background-size: contain;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+
 }
 @keyframes pulse {
     0% {transform: scale(1) rotate(-30deg);}
@@ -46,48 +240,192 @@ body{
 .headerText{
     font-family: "Schoolbell";
 
-    font-size: 2.3em;
+    font-size: 6vmin;
     animation-duration: 4s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-name: pulse;
     position: absolute;
-    bottom:0;
+    bottom:-5%;
+    left: 37%;
+    cursor: default;
 
 
 
 }
 
 .headerLinks{
-    border: 1px solid black;
+    #border: 1px solid black;
     width: 20%;
     height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+
+
+}
+.AboutMeRef{
+    font-family: "Architects Daughter";
+    font-size: 4vmin;
+    z-index: 3;
+    cursor: pointer;
+    user-select: none;
+}
+.AboutMeRef:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(.1em .1em .1em black);
+    color: white;
+}
+.SoundToggle{
+    font-family: "Architects Daughter";
+    font-size: 4vmin;
+    z-index: 3;
+    cursor: pointer;
+    user-select: none;
+}
+.SoundToggle:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(.1em .1em .1em black);
+    color: white;
+}
+.blurBackground{
+    position: absolute;
+    height: 100%;
+    width: 18%;
+    border-radius: 10%;
+    background-image: url("images/LeavesWallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(7px);
+    z-index: 2;
+    transform: rotatex(180deg) rotatey(180deg);
 
 }
 .mainContainer{
-    border: 1px solid green;
+    #border: 3px solid green;
     display: flex;
+    justify-content: space-around;
     height: 80%;
 
 
+
+}
+
+@-webkit-keyframes slides {
+    from {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 55% 30%;
+
+    }
+    20% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 35% 90%;
+    }
+    40% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 47% -90%;
+
+    }
+    60% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 20% 90%;
+    }
+    80% {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 65% 90%;
+    }
+    to {
+        background: url("images/3PikminWallpaper.jpg");
+        background-size: cover;
+        background-position: 55% 30%;
+    }
 }
 .statsContainerLarge{
-    border: 1px solid red;
+    #border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-}
-.statsContainer{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    height: 80%;
-    font-family: "Schoolbell";
+    width: 24%;
+    background-image: url("images/WoodWallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 14.7% 100%;
+    box-shadow: .4em .1em .5em .1em gray;
+    border-radius: 10%;
+    /*animation-name: slides;*/
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
 
 }
+.statsContainer{
+    #border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 98%;
+    height: 98%;
+    font-family: "Schoolbell";
+    color: white;
+    font-weight: 900;
+    position: absolute;
+    backface-visibility: hidden;
+
+
+
+
+}
+.AboutMe{
+    #border: 1px solid black;
+    height: 90%;
+    width: 95%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY( 180deg );
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: "Schoolbell";
+    font-size: 1.3em;
+}
+.message{
+    #border: 1px solid black;
+    height: 20%;
+    z-index: 20;
+}
+
+.hiddenMessage {
+    visibility: hidden;
+}
+.statsContainerLarge:hover .hiddenMessage{
+    visibility: visible;
+}
+
+
+
+
+
+
+.statsContainerLarge.flipped{
+    transform: rotateY( 180deg );
+    transition: transform 1s;
+}
+
+
+
+
+
 @keyframes Textpulse {
     0% {
         transform: scale(1);
@@ -102,9 +440,12 @@ body{
     }
 }
 .statsTitle{
-    border: 1px solid black;
+    #border: 1px solid black;
     height: 10%;
     font-size: 1.4em;
+    filter: drop-shadow(.01em .1em .01em black);
+    padding-left: 4%;
+    backface-visibility: hidden;
 
 }
 .GamesPlayed{
@@ -113,8 +454,10 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
+    display: flex;
+    justify-content: space-around;
 
 
 }
@@ -124,9 +467,11 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: space-around;
 }
 .accuracy{
     #border: 1px solid black;
@@ -134,53 +479,102 @@ body{
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: Textpulse;
+    /*animation-name: Textpulse;*/
     transition: transform 2s ease-in-out;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: space-around;
 }
-.reset{
-    border: 1px solid black;
-    height: 10%;
-}
+.label{
+    display: inline-block;
+    width: 50%;
+    text-shadow: .1em -.01em .2em black;
+    font-size: 1em;
+    color: white;
+    border-radius: 20%;
 
-.gameContainer{
-    border: 1px solid salmon;
+
+}
+.value{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    filter: drop-shadow(.01em .1em .01em black);
+    font-weight: 900;
+    font-size: 1.4em;
+    backface-visibility: hidden;
+
+}
+.resetContainer{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    backface-visibility: hidden;
+
+}
+.reset{
+    #border: .3px solid black;
+    height: 10%;
+    color: white;
+    text-shadow: .1em .1em .5em black;
+    font-family: Schoolbell;
+    font-size: 3vmin;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    bottom: 5%;
+    backface-visibility: hidden;
+
+}
+.reset:hover{
+    transform: scale(1.1);
+}
+.reset:focus{
+    outline:none;
+}
+.gameContainer{
+    #border: 3px solid salmon;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    position: relative;
 
 }
 #game-area{
-    border: 1px solid orange;
+    #border: 1px solid orange;
     height: 90%;
-    width: 66%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     perspective: 800px;
+    position: absolute;
+    left: 5%;
 
 }
 .card {
-    border: 1px outset hotpink;
+    border: 2px inset #23b419;
     border-radius: 20%;
     width: 15%;
     height: 30%;
     position: relative;
-    /*background-color: greenyellow;*/
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: .1em .3em .5em 0 rgba(0, 0, 0, .2);
     transition: all .3s ;
     transform-style: preserve-3d;
+    cursor: pointer;
+
 
 }
 
 .card .front {
-    border: 1px outset hotpink;
+    #border: 1px outset hotpink;
     border-radius: 20%;
     width: 95%;
     height: 95%;
@@ -188,7 +582,8 @@ body{
     background-color:  #0fb8ad;
     box-shadow: .1em .3em .5em 0 rgba(0, 0, 0, .5);
     transition: transform .3s ease-in-out;
-
+    -webkit-user-drag: none;
+    user-select: none;
 
 }
 .card .back {
@@ -197,24 +592,21 @@ body{
     height: 95%;
     position: absolute;
     backface-visibility: hidden;
+    -webkit-user-drag: none;
+    user-select: none;
+
 }
 
-
-
-
-
-
-
-
 .card.blur:not(.flipped){
-    filter: blur(.1em);
+
     transform: scale(.95);
-    transition: transform .6s;
+    transition: transform .4s;
+    filter: blur(.1em);
 }
 .card.active{
     box-shadow: .2em .5em .8em 0 rgba(0,0,0,0.3);
-    transform: scale(1.1);
-    transition: transform .3s;
+    transform: scale(1.1) translate(0%, -2%);
+    transition: transform .2s;
 
 }
 
@@ -222,22 +614,5 @@ body{
     transform: rotateY( -180deg );
     transition: transform 1s;
 }
-/*to fix flip while mouseenter(transform properties were overriding*/
-/*#game-area .card.flipped.active{*/
-    /*transform: rotateY(-180deg) scale(1.1);*/
-
-/*}*/
-
-
-
-
-
-
-/*#game-area .card.flipped.blur{*/
-    /*transform: rotateY(-180deg) scale(.95);*/
-
-/*}*/
-
-
 
 

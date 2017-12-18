@@ -15,160 +15,63 @@
 
 
     <body>
+    <div class="WinPage">
+        <div class="WinTextWrapper">
+            <div class="WinPageMessage">Thanks for playing!</div>
+        </div>
+    </div>
+    <div class="overlay2"></div>
+    <div class="titlePage">
+        <div class="titleTextWrapper">
+            <div class="titleTitle">Play</div>
+        </div>
+    </div>
+    <div class="overlay"></div>
     <div class="PageContainer">
         <header class="headerContainer">
             <div class="headerTitle"></div>
             <div class="headerText">Match</div>
             <aside class="headerLinks">
+                <div class="AboutMeRef">About</div>
+                <div class="SoundToggle">Sound</div>
+                <div class="blurBackground"></div>
             </aside>
         </header>
         <main class="mainContainer">
             <aside class="statsContainerLarge">
-                <aside class="statsContainer">
-                    <div class="statsTitle">Stats:</div>
-                    <div class="GamesPlayed">
-                        <div class="label">Games Played</div>
-                        <div class="value"></div>
-                    </div>
-                    <div class="attempts">
-                        <div class="label">Attempts</div>
-                        <div class="value"></div>
-                    </div>
-                    <div class="accuracy">
-                        <div class="label">Accuracy</div>
-                        <div class="value"></div>
-                    </div>
-                    <button class="reset">Reset Game</button>
+                <div class="AboutMe">
 
-                </aside>
-            </aside>
-            <main class="gameContainer">
-                <div id="game-area">
-                    <div class="card">
-                        <img class="front" src="images/RedPikCard.jpg"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front" src="images/RedPikCard.jpg"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front" src="images/BluePikCard.jpg"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front" src="images/BluePikCard.jpg"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
-                    <div class="card">
-                        <img class="front"></img>
-                        <img class="back" src="images/PikminCardBack.png"></img>
-                    </div>
+                    <div class="message">Secret content? Can't help you.   ..Don't waste your time inspecting anything over here either....</div>
+                    <div class="hiddenMessage"> Aren't we clever. Okay then, try beating the game with better than 50% accuracy. Maybe something will happen?</div>
 
 
                 </div>
+                <aside class="statsContainer">
+                    <div class="statsTitle">Stats:</div>
+                    <div class="GamesPlayed">
+                        <div class="label">Games Played:</div>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="attempts">
+                        <div class="label">Attempts:</div>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="accuracy">
+                        <div class="label">Accuracy:</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class = "resetContainer">
+                        <div class="reset">Reset Game</div>
+                    </div>
+                </aside>
+
+            </aside>
 
 
-            <script>
-//                var $container	= $('#game-area'),
-//                    $cards	= $container.children('.card'),
-//                    timeout;
-//
-//                $cards.on( 'mouseenter', function( event ) {
-//
-//                    var $card	= $(this);
-//                    clearTimeout( timeout );
-//                    timeout = setTimeout( function() {
-//
-//                        if( $card.hasClass('active') ) return false;
-//
-//                        $cards.not($card).removeClass('active').addClass('blur');
-//
-//                        $card.removeClass('blur').addClass('active');
-//
-//                    }, 0 );
-//
-//                });
-//
-//                $cards.on( 'mouseleave', function( event ) {
-//
-//                    clearTimeout( timeout );
-//                    $cards.removeClass('active blur');
-//
-//                });
+            <main class="gameContainer">
+                <div id="game-area">
 
-
-//                    var container	= $('#game-area'),
-//                        cards= container.children('.card');
-//
-//
-//                    cards.on( 'mouseenter', function() {
-//
-//                        var card= $(this);
-//
-//                        cards.not(card).removeClass('active').addClass('blur');
-//
-//                        card.removeClass('blur').addClass('active');
-//                    });
-//                    cards.on( 'mouseleave', function() {
-//
-//                        cards.removeClass('active blur');
-//                    });
-
-
-            </script>
+                </div>
 
             </main>
         </main>
