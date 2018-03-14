@@ -325,7 +325,7 @@ var PikminCardMatch = new Audio("Sounds/PikminCardMatch.mp3");
 PikminCardMatch.volume = .4;
 
 var titleAudio = new Audio("Sounds/TitleScreen.mp3");
-titleAudio.play();               //MUTED TEMP
+titleAudio.play();               
 titleAudio.volume=.8;
 
 
@@ -336,7 +336,7 @@ function matchAudio(src){
 
     switch(src) {
         case "images/LouieCard.jpg":
-            LouieMatch.load();   //had to reload this each time or failure
+            LouieMatch.load();   
             LouieMatch.play();
 
             break;
