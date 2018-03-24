@@ -661,3 +661,102 @@ body{
 }
 
 
+
+
+@media screen and (max-width: 800px){
+    .SoundToggle{
+        font-size: 3.5vmin;
+    }
+    .AboutMeRef{
+        font-size: 3.5vmin;
+    }
+    .headerText{
+        bottom: 21%;
+    }
+    .card{
+        width: 16%;
+        height: 23%;
+    }
+    #game-area{
+        height: 76%;
+        width: 89%;
+        top: 80px;
+    }
+    .statsContainerLarge{
+        height: 80%;
+        top: 70px;
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) and (min-width: 801px){
+    .titleTextWrapper{
+        right: 22%;
+    }
+    .card{
+        width: 16%;
+        height: 23%;
+    }
+    .statsContainerLarge{
+        height: 90%;
+        top: 40px;
+    }
+    #game-area{
+        height: 86%;
+        top: 60px;
+        justify-content: space-between;
+    }
+    .headerText{
+        font-size: 4vw;
+        bottom: 7%;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+    .titleTextWrapper{
+        right: 39%;
+    }
+    .titlePage{
+        background-size: cover;
+        background-position-x: 52%;
+    }
+    .headerText{
+        bottom: 23%;
+    }
+    .SoundToggle{
+        font-size: 3.2vmin;
+    }
+    .AboutMeRef{
+        font-size: 3.2vmin;
+    }
+    .statsContainerLarge{
+        height: 74%;
+        top: 54px;
+        width: 33%;
+    }
+    .label{
+        font-size:1.6em;
+    }
+    .statsTitle{
+        font-size: 2.4em;
+    }
+    .value{
+        font-size: 1.85em;
+    }
+    .gameContainer{
+        width: 76%;
+    }
+    #game-area{
+        height: 92%;
+        width: 88%;
+        top: 54px;
+        justify-content: space-around;
+    }
+    .card{
+        width: 23%;
+        height: 18%;
+    }
+
+}
+
+
