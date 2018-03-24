@@ -691,8 +691,8 @@ body{
 
 
 @media screen and (max-width: 1200px) and (min-width: 801px){
-    .titleTextWrapper{
-        right: 22%;
+    .titlePage{
+        height: 125%
     }
     .card{
         width: 16%;
@@ -712,6 +712,121 @@ body{
         bottom: 7%;
     }
 }
+/* iphone6,7,8 */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .titleTextWrapper{
+        right: 39%;
+    }
+    .titlePage{
+        background-size: cover;
+        background-position-x: 52%;
+    }
+    .headerTitle{
+        width: 57%;
+        background-size: 100%
+    }
+    .headerText{
+        font-size: 5vw;
+        bottom: 24%;
+        left: 51%
+    }
+    .AboutMe{
+        font-size: 2.3em;
+    }
+    .SoundToggle{
+        font-size: 3.5vmin;
+    }
+    .mainContainer {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .statsContainerLarge{
+        width: 100%;
+        height: 25%;
+
+    }
+    .statsTitle{
+        font-size: 3.4em
+    }
+    .label{
+        font-size: 2em;
+        margin-left: 21%;
+        margin-top: -1.4%;
+    }
+    .value{
+        font-size: 2em;
+        margin-left: 21%;
+        margin-top: -1.4%;
+    }
+
+    .gameContainer{
+        width: 100%;
+        height: 100%;
+    }
+    #game-area{
+        width: 91%;
+        top: 90px;
+        justify-content: space-around;
+    }
+    .card{
+        width: 24%;
+        height: 23%;
+    }
+    .WinPage.fadeIn{
+        background-position: 45% 14%;
+        height: 126%;
+    }
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+      .titleTextWrapper{
+          right:38.4%;
+      }
+      #game-area{
+          height:100%;
+          top: 15px;
+      }
+      .card{
+          width: 15%;
+          height: 26%;
+      }
+
+  } 
+/* iphone6,7,8+ */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+      .titleTextWrapper{
+          right: 38.4%;
+      }
+    .headerText{
+        bottom:-15%;
+        left: 36%
+    }
+    #game-area{
+        height: 96%;
+        top: 25px;
+        width: 89%;
+    }
+    .card{
+        width: 15%;
+        height: 27%;
+    }
+}
+
+/* ipad */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
     .titleTextWrapper{
         right: 39%;
@@ -756,7 +871,71 @@ body{
         width: 23%;
         height: 18%;
     }
-
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+    .statsContainerLarge{
+        top: 47px
+    }
+    #game-area{
+        width: 88%;
+    }
+    .card{
+        width: 16%;
+        height: 27%;
+    }
+}
+/* iphone x */
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+      .titleTextWrapper{
+          right: 38.4%;
+      }
+    .headerText{
+        bottom:-9%;
+        left: 37%
+    }
+    .statsContainerLarge{
+        width: 27%;
+        height: 85%;
+        top: 29px;
+    }
 
+    .gameContainer{
+        width: 67%;
+    }
+    #game-area{
+        height: 88%;
+        top: 28px;
+        width: 84%;
+    }
+    .card{
+        width: 15%;
+        height: 32%;
+    }
+  }
+/* ipad Pro */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape){
+    .headerText{
+        left: 36%;
+        bottom: 5%;
+        font-size: 4.5vmin;
+    }
+    .statsContainerLarge{
+        top: 47px;
+        height: 89%;
+    }
+    .gameContainer{
+        width: 73%;
+    }
+    #game-area{
+        width: 92%;
+    }
+    .card{
+        width: 15%;
+        height: 28%;
+    }
+}
 
