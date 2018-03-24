@@ -2,8 +2,20 @@ $(document).ready(initializeApp);
 
 function initializeApp(){
 
-
-
+    if(localStorage.pikminSound){
+        popAudio.volume = 0;
+        mainAudio.volume = 0;
+        GameWin.volume = 0;
+        LouieMatch.volume = 0;
+        OlimarMatch.volume = 0;
+        GameWinWhistle.volume = 0;
+        BlowerMatch.volume = 0;
+        BulborbMatch.volume = 0;
+        PikminCardMatch.volume = 0;
+        titleAudio.volume = 0;
+        $(".SoundToggle").text("Sound On");
+    }
+    
     $("#game-area").on("click", ".card", flipCard);
     $("#game-area").on("click", ".card", card_clicked);
     $(".reset").on("click", reset);
@@ -13,40 +25,7 @@ function initializeApp(){
         $(".statsContainerLarge").toggleClass("flipped");
 
     });
-    $(".SoundToggle").on("click", function() {
-        if(mainAudio.volume===0) {
-
-
-            popAudio.volume = 1;
-            mainAudio.volume=.7;
-            GameWin.volume = 1;
-            LouieMatch.volume = 1;
-            OlimarMatch.volume = 1;
-            GameWinWhistle.volume = 1;
-            BlowerMatch.volume = .9;
-            BulborbMatch.volume = .9;
-            PikminCardMatch.volume = .4;
-            titleAudio.volume=.8;
-
-    }
-    else{
-
-        popAudio.volume = 0;
-        mainAudio.volume=0;
-        GameWin.volume = 0;
-        LouieMatch.volume = 0;
-        OlimarMatch.volume = 0;
-        GameWinWhistle.volume = 0;
-        BlowerMatch.volume = 0;
-        BulborbMatch.volume = 0;
-        PikminCardMatch.volume = 0;
-        titleAudio.volume=0;
-
-
-        }
-
-
-    } );
+    $(".SoundToggle").on("click", toggleAudio);
     $(".WinPageMessage").on("click", function(){
         $(".overlay2").hide();
         $(".WinPage").addClass("fadeOut");
@@ -338,7 +317,6 @@ function matchAudio(src){
         case "images/LouieCard.jpg":
             LouieMatch.load();   
             LouieMatch.play();
-
             break;
         case "images/Olimar.jpg":
             OlimarMatch.play();
@@ -354,6 +332,36 @@ function matchAudio(src){
             PikminCardMatch.play();
     }
 };
+function toggleAudio(){
+    if (localStorage.pikminSound) {
+        localStorage.removeItem("pikminSound")
+        popAudio.volume = 1;
+        mainAudio.volume = .7;
+        GameWin.volume = 1;
+        LouieMatch.volume = 1;
+        OlimarMatch.volume = 1;
+        GameWinWhistle.volume = 1;
+        BlowerMatch.volume = .9;
+        BulborbMatch.volume = .9;
+        PikminCardMatch.volume = .4;
+        titleAudio.volume = .8;
+        $(".SoundToggle").text("Sound Off")
+    }
+    else {
+        localStorage.setItem("pikminSound", false)
+        popAudio.volume = 0;
+        mainAudio.volume = 0;
+        GameWin.volume = 0;
+        LouieMatch.volume = 0;
+        OlimarMatch.volume = 0;
+        GameWinWhistle.volume = 0;
+        BlowerMatch.volume = 0;
+        BulborbMatch.volume = 0;
+        PikminCardMatch.volume = 0;
+        titleAudio.volume = 0;
+        $(".SoundToggle").text("Sound On");
+    }
+}
 
 
 
